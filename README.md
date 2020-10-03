@@ -36,7 +36,7 @@ ______________________________________________________________________
 - Solutions:
   - Frontend exercise (last part of exercise from last week (skip the red part)
     - [Deployed with surge](http://ap-cors.surge.sh/)
-    - Github link:
+    - Github link: https://github.com/AlexanderPihl/DAT3SEM-Flow2-Week2/tree/main/Friday
     
   - Exam preparation exercise about AJAX, CORS and SVG
     - [Deployed with surge](http://ap-examprep1.surge.sh/)
