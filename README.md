@@ -1,7 +1,7 @@
 # Flow2-Week2 - Alexander Pihl - DAT3SEM
 
 ## Monday
-- Review
+- Review of last week assignments
 
 ## Tuesday
 - Assignments:
