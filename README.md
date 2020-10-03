@@ -16,7 +16,7 @@ ______________________________________________________________________
   
 - Solutions:
   - Fetch and Promises
-    - [Deployed on surge](ap-ajaxfetch_dom.surge.sh)
+    - [Deployed with surge](http://ap-ajaxfetch_dom.surge.sh/)
     - Github link: https://github.com/AlexanderPihl/DAT3SEM-Flow2-Week2/tree/main/Wednesday
 ______________________________________________________________________ 
 ## Thursday 
