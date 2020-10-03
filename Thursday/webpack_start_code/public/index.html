@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div class="main">
+
+    <div id="1">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>GENDER</th>
+            <th>EMAIL</th>
+          </tr>
+        </thead>
+        <tbody id="tb"></tbody>
+      </table>
+    </div>
+
+
+
+    <div id="2">
+      <hr>
+      <h1>Get user by ID</h1>
+
+      <input id="inp_UserByID">
+      <button id="btn_UserByID">Get user</button>
+      <p id="txt_UserByID"></p>
+    </div>
+
+
+    <div id="3">
+
+      <h1>Insert a person</h1>
+
+      <label>Name &nbsp; </label><input placeholder="Name" id="inp_InsertName"><br>
+
+      <label>Age &nbsp; </label><input placeholder="Age" id="inp_InsertAge"><br>
+
+      <label>Gender &nbsp; </label>
+      <select id="inp_InsertGender">
+        <option value="male">male</option>
+        <option value="female">female</option>
+      </select>
+      <br>
+      <label>Email &nbsp; </label><input placeholder="E-Mail" id="inp_InsertMail"><br>
+
+      <button id="btn_InsertPerson">Insert person</button>
+
+    </div>
+
+    <hr>
+
+
+    <div id="4">
+
+      <h1>Edit a user</h1>
+
+      <label>ID &nbsp; </label><input placeholder="ID" id="inp_UpdateID"><br>
+
+      <label>Name &nbsp; </label><input placeholder="Name" id="inp_UpdateName"><br>
+
+      <label>Age &nbsp; </label><input placeholder="Age" id="inp_UpdateAge"><br>
+
+      <label>Gender &nbsp; </label>
+      <select id="inp_UpdateGender">
+        <option value="male">male</option>
+        <option value="female">female</option>
+      </select>
+      <br>
+      <label>Email &nbsp; </label><input placeholder="E-Mail" id="inp_UpdateMail"><br>
+
+      <button id="btn_UpdatePerson">Update person</button>
+
+
+    </div>
+
+    <hr>
+
+    <div id="5">
+      
+      <h1>Delete a user</h1>
+
+      <label>ID &nbsp; </label><input placeholder="ID" id="inp_DeleteID"><br>
+
+      <button id="btn_DeletePerson">Delete person</button>
+
+
+    </div>
+
+  </div>
+  <script src="bundle.js"></script>
+</body>
+
+</html>

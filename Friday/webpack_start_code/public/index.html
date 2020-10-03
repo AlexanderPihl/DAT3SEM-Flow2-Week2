@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div class="table">
+
+    <div id="1">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>FIRSTNAME</th>
+            <th>LASTNAME</th>
+            <th>PHONE</th>
+            <th>&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody id="tb" class="outer"></tbody>
+      </table>
+    </div>
+
+    <!--Reload site-->
+    <button type="button" class="btn btn-outline-secondary" id="btn_reloadSite">Reload site</button>
+
+    <!-- Add person -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPersonModal">
+      Add Person
+    </button>
+
+    <!-- Modal Add person -->
+    <div class="modal fade" id="addPersonModal" tabindex="-1" aria-labelledby="addPersonModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addPersonModalLabel">Add Person</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="fName">Firstname</label>
+              <input type="text" class="form-control" id="inp_InsertFirstName">
+            </div>
+            <div class="form-group">
+              <label for="lName">Lastname</label>
+              <input type="text" class="form-control" id="inp_InsertLastName">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="text" class="form-control" id="inp_InsertPhone">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="btn_InsertPerson">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Edit Update person -->
+    <div class="modal fade" id="editPersonModal" tabindex="-1" aria-labelledby="editPersonModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editPersonModalLabel">Edit Person</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="inp_UpdateFirstName">Firstname</label>
+              <input type="text" class="form-control" id="inp_UpdateFirstName">
+            </div>
+            <div class="form-group">
+              <label for="inp_UpdateLastName">Lastname</label>
+              <input type="text" class="form-control" id="inp_UpdateLastName">
+            </div>
+            <div class="form-group">
+              <label for="inp_UpdatePhone">Phone</label>
+              <input type="text" class="form-control" id="inp_UpdatePhone">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="btn_edit">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+  </div>
+  <script src="bundle.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
