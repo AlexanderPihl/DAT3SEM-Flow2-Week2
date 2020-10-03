@@ -8,8 +8,7 @@
   -  [Callbacks and more](https://docs.google.com/document/d/1vl8J-PUiFIzUt6jCE9gGpiw5XvOW1L3FeouTiWemwt8/edit?usp=sharing)
     
 - Solutions:
-  - Github link: 
-________________
+  - Github link: https://github.com/AlexanderPihl/DAT3SEM-Flow2-Week2/tree/main/Tuesday
 ______________________________________________________________________  
 ## Wednesday
 - Assignments:
@@ -18,7 +17,7 @@ ______________________________________________________________________
 - Solutions:
   - Fetch and Promises
     - [Deployed on surge](ap-ajaxfetch_dom.surge.sh)
-    - Github link:
+    - Github link: https://github.com/AlexanderPihl/DAT3SEM-Flow2-Week2/tree/main/Wednesday
 ______________________________________________________________________ 
 ## Thursday 
 - Assignments:
@@ -27,7 +26,7 @@ ______________________________________________________________________
 - Solutions:
   - CORS and Single Page Application (SPA)
     - [Deployed with surge](http://alex_cors.surge.sh/)
-    - Github link:
+    - Github link: https://github.com/AlexanderPihl/DAT3SEM-Flow2-Week2/tree/main/Thursday
 ______________________________________________________________________ 
 ## Friday
 - Assignments:
@@ -41,5 +40,5 @@ ______________________________________________________________________
     
   - Exam preparation exercise about AJAX, CORS and SVG
     - [Deployed with surge](http://ap-examprep1.surge.sh/)
-    - Github link:
+    - Github link: https://github.com/AlexanderPihl/DAT3SEM-Flow2-Week2/tree/main/Friday
 ______________________________________________________________________  
