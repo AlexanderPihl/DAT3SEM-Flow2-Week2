@@ -11,7 +11,8 @@ const sectionEx3 = document.getElementById('3');
 let s1Content = sectionEx1.innerHTML;
 let s2Content = sectionEx2.innerHTML;
 let s3Content = sectionEx3.innerHTML;
-const saveContent= ()=>{
+
+const saveContent= (id)=>{
     s1Content = sectionEx1.innerHTML;
     s2Content = sectionEx2.innerHTML;
     s3Content = sectionEx3.innerHTML;
@@ -22,37 +23,38 @@ removeContent();
 
 btnEx1.onclick = (e)=>{
     e.preventDefault();
-    saveContent();
     removeContent();
     insertContent(1);
 }
 
 btnEx2.onclick = (e)=>{
     e.preventDefault();
-    saveContent();
     removeContent();
     insertContent(2);
 }
 
 btnEx3.onclick = (e)=>{
     e.preventDefault();
-    saveContent();
     removeContent();
     insertContent(3);
 }
 // btnEx4.onclick = (e)=>{
-//     e.preventDefault();
-//     removeContent();
-//     insertContent(4);
-// }
-
-
+    //     e.preventDefault();
+    //     removeContent();
+    //     insertContent(4);
+    // }
+    
+    
 function removeContent(){
+    s1Content = sectionEx1.innerHTML? sectionEx1.innerHTML:s1Content; 
     sectionEx1.innerHTML = '';
+    s2Content = sectionEx2.innerHTML? sectionEx2.innerHTML:s2Content; 
     sectionEx2.innerHTML = '';
+    s3Content = sectionEx3.innerHTML? sectionEx3.innerHTML:s3Content; 
     sectionEx3.innerHTML = '';
     // sectionEx4.innerHTML = '';
 }
+export default removeContent;
 
 function insertContent(id){
     if(id === 1)

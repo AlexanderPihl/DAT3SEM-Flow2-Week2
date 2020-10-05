@@ -104,6 +104,13 @@
       "gender": "female",
       "email": "lizabeth@mail.com",
       "id": 115
+    },
+    {
+      "name": "Terkel",
+      "age": "16",
+      "gender": "male",
+      "email": "terkeli@knibe.dk",
+      "id": 116
     }
   ]
 }
