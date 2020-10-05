@@ -1,101 +1,102 @@
 import 'bootstrap/dist/css/bootstrap.css'
+import jokes from "./jokes";
+// import navigation from "./navigation";
 
-const tb = document.getElementById('tb');
-const url = 'http://localhost:3333/api/users';
+//const allJokes = jokes.getJokes().map(joke => "<li>"+joke+"</li>");
+//document.getElementById("jokes").innerHTML = allJokes.join("");
 
-fetch(url)
-    .then(res => fetchWithErrorCheck(res))
-    .then((data) => {
-        const trs = data.map((user) => {
-            return `<tr><td>${user.id}</td><td>${user.name}</td><td>${user.age}</td><td>${user.gender}</td><td>${user.email}</td></tr>`;
-        });
-        const tableBodyrStr = trs.join('');
-        tb.innerHTML = tableBodyrStr;
-    });
+//let button = getElementById("btn_Joke")
 
+// #########
+// 1. Jokes
+// #########
 
-// Get user by id
-const inp_InputID = document.getElementById("inp_UserByID");
-const txt_InputID = document.getElementById('txt_UserByID');
+document.getElementById("btn_Joke").addEventListener("click", function () {
+    const jokeID = document.getElementById("inp_Joke").value;
+    document.getElementById("txt_Joke").innerHTML = jokes.getJokeById(jokeID);
+});
 
-document.getElementById("btn_UserByID").onclick = () => {
-    const id = document.getElementById("inp_UserByID").value;
-    fetch(url + "/" + id)
-        .then(res => fetchWithErrorCheck(res))
-        .then(user => {
-            const userString = `Name: ${user.name} Age: ${user.age} Gender: ${user.gender} Email: ${user.email}`;
-            document.getElementById("txt_UserByID").innerHTML = userString;
-        });
-}
+document.getElementById("btn_JokeIns").addEventListener("click", function () {
+    const jokeInsert = document.getElementById("inp_JokeIns").value;
+    jokes.addJoke(jokeInsert);
+});
 
 
 
-// Fetch with errors
-function fetchWithErrorCheck(res) {
-    if (!res.ok) {
-        return Promise.reject({ status: res.status, fullError: res.json() })
-    }
-    return res.json();
-}
+// ##########
+//   Quotes
+// 2. 1,2,3,4
+// ##########
+document.getElementById("btn_Quote").addEventListener("click", function () {
 
+    fetch('https://studypoints.info/jokes/api/jokes/period/hour')
+        .then(function (response) {
 
-//Add user
-document.getElementById("btn_InsertPerson").onclick = () => {
-
-
-    let options = {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: document.getElementById("inp_InsertName").value,
-            age: document.getElementById("inp_InsertAge").value,
-            gender: document.getElementById("inp_InsertGender").value,
-            email: document.getElementById("inp_InsertMail").value
+            return response.json();
         })
-    }
-    fetch(url, options);
-    location.reload();
-    
-}
+        .then(function (data) {
+            console.log(data.id);
+            document.getElementById("div_Quote").innerText = data.joke;
+        });
+});
 
-//Edit user
-document.getElementById("btn_UpdatePerson").onclick = () => {
+//2.5.
+/*
+By monitoring the network tab we are able to see that the qoute is updated every hour and therefor the quote gets a new ID.
+It is possible because the only way to overcome the same-origin policy is to ensure that the requested resource from other 
+origins includes the right HTTP headers such as Access-Control-Allow-Origin. In our case it is set with the wildcard * which means all.
 
-    const updateID = document.getElementById("inp_UpdateID").value;
+Note to self:
 
-    let options = {
-        method: "PUT",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: document.getElementById("inp_UpdateName").value,
-            age: document.getElementById("inp_UpdateAge").value,
-            gender: document.getElementById("inp_UpdateGender").value,
-            email: document.getElementById("inp_UpdateMail").value
+Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell browsers to give a web 
+application running at one origin, access to selected resources from a different origin.
+
+
+Ajax short for Asynchronous JavaScript and XML  is a set of web development techniques using many web technologies on 
+the client side to create asynchronous web applications. With Ajax, web applications can send and retrieve data from 
+a server asynchronously (in the background) without interfering with the display and behaviour of the existing page. 
+By decoupling the data interchange layer from the presentation layer, Ajax allows web pages and, 
+by extension, web applications, to change content dynamically without the need to reload the entire page.
+
+The same-origin policy is a critical security mechanism that restricts how a document or script loaded from one origin 
+can interact with a resource from another origin. It helps isolate 
+potentially malicious documents, reducing possible attack vectors.
+*/
+
+//2.6
+function getQuote() {
+    fetch('https://studypoints.info/jokes/api/jokes/period/hour')
+        .then(function (response) {
+
+            return response.json();
         })
-    }
-    fetch(`${url}/${updateID}`, options);
-    location.reload();
+        .then(function (data) {
+            console.log(data.id);
+            document.getElementById("div_QuoteHour").innerText = data.joke;
+        });
 }
+getQuote(); //Get quote first time
+setInterval(getQuote, 3600000);
 
-//Delete user
-document.getElementById("btn_DeletePerson").onclick = () => {
-    
-    const deleteID = document.getElementById("inp_DeleteID").value;
 
-    let options = {
-        method: "DELETE",
-        headers: {
-        'Content-Type': 'application/json'
-        }
-     }   
-     fetch(`${url}/${deleteID}`, options);
-     location.reload();
-}
+// #########
+// 3. Extra
+// #########
+
+document.getElementById("north").addEventListener("click", function () {
+    document.getElementById("compass").innerHTML = "North";
+});
+
+document.getElementById("south").addEventListener("click", function () {
+    document.getElementById("compass").innerHTML = "South";
+});
+
+document.getElementById("west").addEventListener("click", function () {
+    document.getElementById("compass").innerHTML = "West";
+});
+
+document.getElementById("east").addEventListener("click", function () {
+    document.getElementById("compass").innerHTML = "East";
+});
 
 
